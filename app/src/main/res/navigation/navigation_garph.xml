@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_garph"
+    android:label="s"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.shoesapp.ui.login.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.example.shoesapp.ui.shoelist.ShoeListFragment"
+        android:label="ShoeList">
+        <action
+            android:id="@+id/action_shoeListFragment_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment" />
+        <action
+            android:id="@+id/action_shoeListFragment_to_loginFragment2"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.example.shoesapp.ui.shoedetail.ShoeDetailFragment"
+        android:label="ShoeDetail">
+        <action
+            android:id="@+id/action_shoeDetailFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.shoesapp.ui.onboarding.WelcomeFragment"
+        android:label="Welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_shoeListInstructionFragment"
+            app:destination="@id/shoeListInstructionFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_shoeListFragment3"
+            app:destination="@id/shoeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListInstructionFragment"
+        android:name="com.example.shoesapp.ui.onboarding.ShoeListInstructionFragment"
+        android:label="Instruction 1">
+        <action
+            android:id="@+id/action_shoeListInstructionFragment_to_shoeDetailInstructionFragment"
+            app:destination="@id/shoeDetailInstructionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailInstructionFragment"
+        android:name="com.example.shoesapp.ui.onboarding.ShoeDetailInstructionFragment"
+        android:label="Instruction 2" >
+        <action
+            android:id="@+id/action_shoeDetailInstructionFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
+    </fragment>
+</navigation>
